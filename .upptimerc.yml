@@ -1,31 +1,36 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: buidlergg
+repo: equitize-status
+user-agent: buidlergg
+secrets: []
+skipDeleteIssues: true
+skipDescriptionUpdate: true
+skipHomepageUpdate: true
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Website
+    url: https://equitizepro.com
+    expectedStatusCodes: [200]
+  - name: API
+    url: https://api.equitizepro.com/health
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Authentication service
+    url: https://api.equitizepro.com/health/auth
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Database reads
+    url: https://api.equitizepro.com/health/database
+    expectedStatusCodes: [200]
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  baseUrl: /equitize-status
+  name: Equitize Pro Status
+  theme: light
+  introTitle: "**Equitize Pro** service status"
+  introMessage: "Availability checks for the website, API, authentication service and database. Checks are scheduled every five minutes and may be delayed. Authentication checks do not test email delivery. Background scan and alert completion are not yet monitored here."
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: Equitize Pro
+      href: https://equitizepro.com
