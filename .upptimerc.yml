@@ -26,9 +26,15 @@ sites:
 status-website:
   cname: status.equitizepro.com
   name: Equitize Pro Status
-  theme: light
-  introTitle: "**Equitize Pro** service status"
-  introMessage: "Availability checks for the website, API, authentication service and database. Checks are scheduled every five minutes and may be delayed. Authentication checks do not test email delivery. Background scan and alert completion are not yet monitored here."
+  theme: dark
+  logoUrl: https://status.equitizepro.com/equitize-logo.png
+  favicon: https://status.equitizepro.com/equitize-icon.png
+  links:
+    - rel: stylesheet
+      href: https://status.equitizepro.com/equitize.css
+  introTitle: "System status"
+  introMessage: "Service availability and incident updates for Equitize Pro."
+  customFootHtml: '<p class="monitoring-note">Monitoring since 4 October 2026. Checks are scheduled every five minutes and can be delayed. Email delivery, background scans and alert delivery are not covered.</p>'
   navbar:
     - title: Status
       href: /
