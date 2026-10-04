@@ -24,7 +24,7 @@ sites:
     __dangerous__body_down_if_text_missing: '"status":"ok"'
 
 status-website:
-  baseUrl: /equitize-status
+  cname: status.equitizepro.com
   name: Equitize Pro Status
   theme: light
   introTitle: "**Equitize Pro** service status"
